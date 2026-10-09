@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Audio & Video Recorder Pro (con Trascrizione & GDPR)",
+  "version": "1.0.0",
+  "description": "Estensione autonoma per registrare chiamate, note vocali e sessioni video dello schermo con trascrizione in tempo reale e promemoria privacy GDPR.",
+  "author": "Afterbit Tech Innovazioni",
+  "permissions": [
+    "storage",
+    "downloads",
+    "offscreen",
+    "tabCapture"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Registratore Audio/Video con Trascrizione",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

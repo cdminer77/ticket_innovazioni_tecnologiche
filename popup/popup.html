@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio & Video Recorder Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo-circle">
+          <span class="rec-dot"></span>
+        </div>
+        <div>
+          <h1 class="brand-title">Recorder Pro</h1>
+          <span class="brand-subtitle">Trascrizione AI & GDPR Promemoria</span>
+        </div>
+      </div>
+      <div class="badge-version">v1.0</div>
+    </header>
+
+    <!-- Indicatore di Stato e Timer -->
+    <div id="status-card" class="status-card idle">
+      <div class="status-indicator">
+        <span id="status-pulse" class="pulse-dot"></span>
+        <span id="status-label" class="status-text">Pronto per registrare</span>
+      </div>
+      <div id="timer-display" class="timer">00:00:00</div>
+    </div>
+
+    <!-- Modulo Controlli (Inattivo o in corso) -->
+    <div class="controls-section">
+      <!-- Selettore Modalità -->
+      <div class="mode-selector" id="mode-selector">
+        <label class="mode-card active" data-mode="audio">
+          <input type="radio" name="recording-mode" value="audio" checked>
+          <span class="mode-icon">🎙️</span>
+          <div class="mode-info">
+            <span class="mode-title">Chiamata / Solo Audio</span>
+            <span class="mode-desc">Microfono e telefonate</span>
+          </div>
+        </label>
+        <label class="mode-card" data-mode="video">
+          <input type="radio" name="recording-mode" value="video">
+          <span class="mode-icon">🖥️</span>
+          <div class="mode-info">
+            <span class="mode-title">Schermo Intero / Video</span>
+            <span class="mode-desc">Teleassistenza con audio</span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Promemoria Obbligatorio Privacy GDPR -->
+      <div class="gdpr-box">
+        <div class="gdpr-header">
+          <div class="gdpr-title-wrap">
+            <span class="gdpr-icon">⚖️</span>
+            <span class="gdpr-title">Formula Consenso Privacy (GDPR)</span>
+          </div>
+          <span class="gdpr-badge">Da leggere</span>
+        </div>
+        <p class="gdpr-text">
+          “La informo che questa conversazione è soggetta a registrazione per scopi di miglioramento del servizio e gestione della richiesta tecnica. Continuando la conversazione, esprime il consenso al trattamento dei dati secondo la nostra informativa privacy. <strong class="gdpr-highlight">Acconsente a procedere?</strong>”
+        </p>
+        <label class="gdpr-confirm">
+          <input type="checkbox" id="gdpr-checked">
+          <span>Consenso verbale esplicito confermato dal cliente</span>
+        </label>
+      </div>
+
+      <!-- Pulsanti Principali -->
+      <div class="actions-group">
+        <button id="btn-start" class="btn btn-start">
+          <span class="btn-icon">🔴</span>
+          <span>Avvia Registrazione</span>
+        </button>
+        <button id="btn-stop" class="btn btn-stop hidden">
+          <span class="btn-icon">⏹️</span>
+          <span>Termina & Salva</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pannello Trascrizione Live e Download -->
+    <div id="results-panel" class="results-panel hidden">
+      <div class="panel-header">
+        <div class="panel-title-wrap">
+          <span>📝</span>
+          <span class="panel-title">Trascrizione Vocale Live</span>
+        </div>
+        <button id="btn-copy-transcript" class="btn-sm" title="Copia testo">
+          📋 Copia
+        </button>
+      </div>
+      <div id="transcript-box" class="transcript-box" contenteditable="true" placeholder="In ascolto della voce..."></div>
+      
+      <div class="download-grid">
+        <button id="btn-download-media" class="btn btn-outline">
+          <span>🎬</span>
+          <span id="download-media-label">Scarica File (.webm)</span>
+        </button>
+        <button id="btn-download-txt" class="btn btn-outline">
+          <span>📄</span>
+          <span>Scarica Testo (.txt)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sezione Storico Recente -->
+    <div class="history-section">
+      <div class="history-header" id="history-toggle">
+        <span>🕒 Storico Recente (<span id="history-count">0</span>)</span>
+        <span id="history-arrow">▼</span>
+      </div>
+      <div id="history-list" class="history-list hidden">
+        <div id="history-empty" class="history-empty">Nessuna registrazione recente in memoria.</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>🔒 100% Locale e Privato &bull; Nessun dato trasmesso a server terzi</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# File temporanei di sistema e browser
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# File di configurazione locale
+*.log
+.vscode/
+.idea/
+
+# Pacchetti compressi generati per distribuzione
+dist/
+*.zip
+*.crx
