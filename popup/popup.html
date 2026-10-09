@@ -19,7 +19,10 @@
           <span class="brand-subtitle">Trascrizione AI & GDPR Promemoria</span>
         </div>
       </div>
-      <div class="badge-version">v1.0</div>
+      <div class="header-actions">
+        <button id="btn-popout" class="btn-icon-header" title="Apri in finestra dedicata fluttuante (consigliato per sessioni lunghe)">🗗</button>
+        <span class="badge-version">v1.1</span>
+      </div>
     </header>
 
     <!-- Indicatore di Stato e Timer -->
@@ -31,7 +34,7 @@
       <div id="timer-display" class="timer">00:00:00</div>
     </div>
 
-    <!-- Modulo Controlli (Inattivo o in corso) -->
+    <!-- Modulo Controlli -->
     <div class="controls-section">
       <!-- Selettore Modalità -->
       <div class="mode-selector" id="mode-selector">
@@ -53,6 +56,15 @@
         </label>
       </div>
 
+      <!-- Selettore Formato Video/Audio per Massima Compatibilità Player -->
+      <div class="format-selector-row">
+        <label for="format-select" class="format-label">🎬 Formato salvataggio:</label>
+        <select id="format-select" class="format-select">
+          <option value="mp4" selected>MP4 (Consigliato - Windows Media Player & VLC)</option>
+          <option value="webm">WebM (Ottimizzato con Fix Durata)</option>
+        </select>
+      </div>
+
       <!-- Promemoria Obbligatorio Privacy GDPR -->
       <div class="gdpr-box">
         <div class="gdpr-header">
@@ -66,8 +78,8 @@
           “La informo che questa conversazione è soggetta a registrazione per scopi di miglioramento del servizio e gestione della richiesta tecnica. Continuando la conversazione, esprime il consenso al trattamento dei dati secondo la nostra informativa privacy. <strong class="gdpr-highlight">Acconsente a procedere?</strong>”
         </p>
         <label class="gdpr-confirm">
-          <input type="checkbox" id="gdpr-checked">
-          <span>Consenso verbale esplicito confermato dal cliente</span>
+          <input type="checkbox" id="gdpr-checked" checked>
+          <span>Consenso verbale esplicito acquisito dal cliente</span>
         </label>
       </div>
 
@@ -79,13 +91,18 @@
         </button>
         <button id="btn-stop" class="btn btn-stop hidden">
           <span class="btn-icon">⏹️</span>
-          <span>Termina & Salva</span>
+          <span>Termina & Salva Registrazione</span>
         </button>
       </div>
     </div>
 
-    <!-- Pannello Trascrizione Live e Download -->
+    <!-- Pannello Risultati, Anteprima e Trascrizione -->
     <div id="results-panel" class="results-panel hidden">
+      <!-- Player Anteprima Immediata -->
+      <div class="preview-wrap">
+        <video id="preview-player" class="preview-player" controls playsinline></video>
+      </div>
+
       <div class="panel-header">
         <div class="panel-title-wrap">
           <span>📝</span>
@@ -98,9 +115,9 @@
       <div id="transcript-box" class="transcript-box" contenteditable="true" placeholder="In ascolto della voce..."></div>
       
       <div class="download-grid">
-        <button id="btn-download-media" class="btn btn-outline">
-          <span>🎬</span>
-          <span id="download-media-label">Scarica File (.webm)</span>
+        <button id="btn-download-media" class="btn btn-download-primary">
+          <span>💾</span>
+          <span id="download-media-label">Scarica Video (.mp4)</span>
         </button>
         <button id="btn-download-txt" class="btn btn-outline">
           <span>📄</span>
@@ -122,10 +139,11 @@
 
     <!-- Footer -->
     <footer class="app-footer">
-      <span>🔒 100% Locale e Privato &bull; Nessun dato trasmesso a server terzi</span>
+      <span>🔒 100% Locale e Privato &bull; Compatibile VLC, Windows Media Player, QuickTime</span>
     </footer>
   </div>
 
+  <script src="webm-duration-fix.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

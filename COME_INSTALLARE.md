@@ -8,7 +8,7 @@ Questa estensione è **100% autonoma (standalone)**: non richiede alcuna install
 
 ### Passo 1: Scarica o estrai la cartella
 Se hai ricevuto il file compresso `.zip`, estrailo in una cartella a tuo piacimento (es. sul Desktop o nella cartella Documenti):
-* La cartella deve contenere il file `manifest.json` e le sottocartelle `popup`, `background`, `offscreen`, `icons`.
+* La cartella deve contenere il file `manifest.json` e le sottocartelle `popup`, `background`, `icons`.
 
 ---
 
@@ -47,16 +47,21 @@ Se hai ricevuto il file compresso `.zip`, estrailo in una cartella a tuo piacime
 ## 🎙️ Come si usa
 
 1. **Clicca sull'icona dell'estensione**.
-2. **Scegli la modalità**:
+2. **(Consigliato per sessioni lunghe / AnyDesk)**: clicca sull'icona **🗗** in alto a destra nel popup per aprire il registratore in una **finestra fluttuante dedicata**: rimarrà sempre aperta nell'angolo del monitor con il timer e i pulsanti a portata di mano, anche se clicchi su altre finestre!
+3. **Scegli la modalità**:
    * 🎙️ **Chiamata / Solo Audio**: per telefonate o note vocali (cattura dal microfono).
    * 🖥️ **Schermo Intero / Video**: per teleassistenza, AnyDesk, browser o finestre con audio di sistema + microfono.
-3. **Leggi la formula obbligatoria Privacy (GDPR)**:
+4. **Scegli il formato salvataggio**:
+   * **MP4 (Consigliato)**: compatibile al 100% nativamente con **Windows Media Player**, **VLC**, **Film & TV** e smartphone.
+   * **WebM**: standard web ottimizzato con fix automatico della durata.
+5. **Leggi la formula obbligatoria Privacy (GDPR)**:
    * Nel riquadro dorato trovi la dicitura standard da pronunciare prima di avviare.
-   * Attendi il consenso verbale ("Sì") dell'interlocutore.
-4. **Premi "Avvia Registrazione"**:
-   * Quando registri lo schermo, il browser ti mostrerà una finestra di sistema: seleziona lo schermo o la finestra desiderata e ricordati di spuntare *"Condividi audio"* se vuoi registrare anche l'audio del PC.
-   * La trascrizione del parlato in lingua italiana comparirà in tempo reale nel riquadro di testo!
-5. **Premi "Termina & Salva"**:
+   * Attendi il consenso verbale ("Sì") del cliente.
+6. **Premi "Avvia Registrazione"**:
+   * Quando registri lo schermo, seleziona lo schermo o la finestra e ricordati di spuntare *"Condividi audio"* se vuoi registrare anche l'audio del PC.
+   * La trascrizione del parlato in italiano compare in tempo reale nel riquadro!
+7. **Premi "Termina & Salva Registrazione"**:
+   * **Player di anteprima**: puoi rivedere o riascoltare immediatamente la registrazione all'interno dell'estensione!
    * Puoi copiare subito la trascrizione con il tasto **"📋 Copia"**.
-   * Puoi salvare il file audio/video con **"🎬 Scarica File (.webm)"**.
-   * Puoi salvare la trascrizione su file di testo con **"📄 Scarica Testo (.txt)"**.
+   * Puoi salvare il file video/audio con **"💾 Scarica Video (.mp4)"** o scaricare il testo con **"📄 Scarica Testo (.txt)"**.
+   * **Registrazioni consecutive illimitate**: puoi avviare subito una nuova registrazione quante volte vuoi senza dover riavviare o reinstallare nulla!
